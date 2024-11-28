@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  example_matrix:
+  job1:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-    job1:
-      runs-on: ${{ matrix.os }}
-      steps:
+
+    runs-on: ${{ matrix.os }}
+    steps:
         - name: run
           run: echo "Exploring Workflow Dispatch Trigger" > test.txt
         - name: upload
